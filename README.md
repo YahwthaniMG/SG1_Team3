@@ -1,4 +1,4 @@
-# SG2_Team3 - Laptop Manufacturing Simulation
+# SG1_Team3 - Laptop Manufacturing Simulation
 
 ## Project Overview
 

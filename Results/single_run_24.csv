@@ -1,0 +1,25 @@
+Metric,Value
+Total Production,166
+Faulty Products,7
+Faulty Rate,0.04046242774566474
+Station 1 Occupancy Rate,0.14027850627028773
+Station 1 Wait Time,0.0
+Station 1 Downtime,4.402298895103146
+Station 2 Occupancy Rate,0.13136060701889024
+Station 2 Wait Time,0.0
+Station 2 Downtime,4.629363768671418
+Station 3 Occupancy Rate,0.13997184064996543
+Station 3 Wait Time,0.0
+Station 3 Downtime,1.8267658812693242
+Station 4 Occupancy Rate,0.14433076635119046
+Station 4 Wait Time,0.0
+Station 4 Downtime,9.275279309364144
+Station 5 Occupancy Rate,0.1489109158577837
+Station 5 Wait Time,0.0
+Station 5 Downtime,8.657331481813511
+Station 6 Occupancy Rate,0.13418432748497638
+Station 6 Wait Time,0.0
+Station 6 Downtime,9.57305976780236
+Production Time,24.753808183896513
+Fixing Time,2.951084546463377
+Supplier Occupancy,0.012688610211621766

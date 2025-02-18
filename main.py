@@ -5,6 +5,7 @@ import numpy as np
 from typing import List, Dict
 from simulation import LaptopFactory
 from metrics import MetricsCollector
+from saveSimulationCSV import *
 
 def run_simulation(sim_time: int = 5000, runs: int = 100) -> Dict:
     """Run multiple simulation instances and collect results"""
@@ -22,7 +23,10 @@ def run_simulation(sim_time: int = 5000, runs: int = 100) -> Dict:
         # Collect metrics
         run_metrics = metrics.get_metrics(sim_time)
         all_metrics.append(run_metrics)
-        
+
+        # Save individual run results
+        save_single_run_metrics_to_csv(run_metrics, f"./Results/single_run_{run+1}.csv")
+
         print(f"Run {run + 1} completed: Produced {run_metrics['production']['total']} laptops "
               f"({run_metrics['production']['faulty']} faulty)")
     
@@ -86,7 +90,7 @@ def analyze_results(metrics_list: List[Dict]) -> Dict:
             'avg_supplier_occupancy': np.mean(aggregated['time_metrics']['supplier_occupancy'])
         }
     }
-    
+    save_simulation_results_to_csv(results)
     return results
 
 if __name__ == "__main__":

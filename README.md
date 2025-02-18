@@ -21,8 +21,8 @@ This repository contains a comprehensive simulation of a laptop manufacturing pr
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/YahwthaniMG/SG2_Team3.git
-cd SG2_Team3/Simulator
+git clone https://github.com/YahwthaniMG/SG1_Team3.git
+cd SG1_Team3/Simulator
 ```
 
 ### Virtual Environment (Recommended)
@@ -43,7 +43,7 @@ pip install -r requirements.txt
 
 ## Project Structure
 ```
-SG2_Team3/
+SG1_Team3/
 │
 └── Simulator/
     ├── main.py         # Main simulation runner

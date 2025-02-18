@@ -21,7 +21,7 @@ This repository contains a comprehensive simulation of a laptop manufacturing pr
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your-username/SG2_Team3.git
+git clone https://github.com/YahwthaniMG/SG2_Team3.git
 cd SG2_Team3/Simulator
 ```
 

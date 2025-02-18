@@ -65,7 +65,9 @@ class MetricsCollector:
         
     def record_production_time(self, time: float):
         self.production_times.append(time)
+
     
+
     def record_material_use(self, material: str, quantity: int = 1, subtype: str = None):
         if subtype:
             self.materials_used[material][subtype] += quantity

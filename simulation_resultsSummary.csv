@@ -1,26 +1,26 @@
 Metric,Value
-Average Total Production,165.46
-Production Standard Deviation,3.499771421107384
-Average Faulty Products,8.68
-Average Faulty Rate,0.04984884427464484
-Station 1 Occupancy Rate,0.14033151965207388
+Average Total Production,165.47
+Production Standard Deviation,3.293797200800317
+Average Faulty Products,8.14
+Average Faulty Rate,0.04688036163815616
+Station 1 Occupancy Rate,0.13992039210185964
 Station 1 Average Wait Time,0.0
-Station 1 Downtime,1.7018646510373707
-Station 2 Occupancy Rate,0.1396907475596209
+Station 1 Downtime,2.105027278936392
+Station 2 Occupancy Rate,0.14101308932103873
 Station 2 Average Wait Time,0.0
-Station 2 Downtime,1.3750993818601103
-Station 3 Occupancy Rate,0.1414875815355366
+Station 2 Downtime,1.2557326212006372
+Station 3 Occupancy Rate,0.13980310686336708
 Station 3 Average Wait Time,0.0
-Station 3 Downtime,4.620164757541924
-Station 4 Occupancy Rate,0.1394297332256467
+Station 3 Downtime,4.756837092463353
+Station 4 Occupancy Rate,0.14071812967133746
 Station 4 Average Wait Time,0.0
-Station 4 Downtime,15.375888445624833
-Station 5 Occupancy Rate,0.13912244690969183
+Station 4 Downtime,15.652553643320319
+Station 5 Occupancy Rate,0.13876468284334506
 Station 5 Average Wait Time,0.0
-Station 5 Downtime,6.5957846813794925
-Station 6 Occupancy Rate,0.13907867379796168
+Station 5 Downtime,7.44573088848447
+Station 6 Occupancy Rate,0.13946595794990363
 Station 6 Average Wait Time,0.0
-Station 6 Downtime,6.362547581437191
-Average Production Time,24.63288854859131
-Average Fixing Time,2.956408145310889
-Average Supplier Occupancy,0.013324771958638086
+Station 6 Downtime,6.33733076103005
+Average Production Time,24.728621642333984
+Average Fixing Time,3.0739969380096004
+Average Supplier Occupancy,0.013056464523703983

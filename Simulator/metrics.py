@@ -103,3 +103,6 @@ class MetricsCollector:
             },
             "material_metrics": {"materials_used": self.materials_used, "resupply_counts": self.resupply_counts},
         }
+
+    def get_PproductionCount():
+        return self.production_count

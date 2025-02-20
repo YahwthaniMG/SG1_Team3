@@ -5,6 +5,7 @@ from typing import Dict, List
 
 import numpy as np
 import simpy
+
 from metrics import MetricsCollector
 from saveSimulation import *
 from simulation import LaptopFactory
@@ -13,7 +14,8 @@ from simulation import LaptopFactory
 def run_simulation(sim_time: int = 1000, runs: int = 40) -> Dict:
     """Run multiple simulation instances and collect results"""
     all_metrics = []
-
+    min_Production = -1
+    max_production = -1
     for run in range(runs):
         # Initialize simulation environment
         env = simpy.Environment()
@@ -22,11 +24,16 @@ def run_simulation(sim_time: int = 1000, runs: int = 40) -> Dict:
 
         # Run simulation
         env.run(until=sim_time)
-
         # Collect metrics
         run_metrics = metrics.get_metrics(sim_time)
         all_metrics.append(run_metrics)
 
+        #compare production
+        current_Production = metrics.get_PproductionCount()
+        if(min_Production==-1 or min_Production > current_Production):
+            min_Production=current_Production
+        if(min_Production==-1 or min_Production < current_Production):
+            min_Production=current_Production
         # Save individual run results
         os.makedirs("./Results", exist_ok=True)
         save_single_run_metrics_to_csv(run_metrics, f"./Results/single_run_{run+1}.csv")
@@ -37,10 +44,10 @@ def run_simulation(sim_time: int = 1000, runs: int = 40) -> Dict:
             f"({run_metrics['production']['faulty']} faulty)"
         )
 
-    return analyze_results(all_metrics)
+    return analyze_results(all_metrics, min_Production, max_production)
 
 
-def analyze_results(metrics_list: List[Dict]) -> Dict:
+def analyze_results(metrics_list: List[Dict], min_Production, max_production) -> Dict:
     """Analyze metrics from multiple runs"""
     # Initialize aggregation structure
     aggregated = {
@@ -90,7 +97,7 @@ def analyze_results(metrics_list: List[Dict]) -> Dict:
             "avg_supplier_occupancy": np.mean(aggregated["time_metrics"]["supplier_occupancy"]),
         },
     }
-    save_simulation_results_to_csv(results)
+    save_simulation_results_to_graph(results)
     return results
 
 

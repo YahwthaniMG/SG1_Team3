@@ -28,12 +28,19 @@ def save_simulation_results_to_csv(metrics, filename="simulation_resultsSummary.
             writer.writerow(["Average Faulty Rate", metrics["production"]["avg_faulty_rate"]])
 
             # Save station metrics
+            occupancy, wait, downtime = 0, 0, 0
             for i in range(6):
+                occupancy += metrics["station_metrics"]["avg_occupancy_rates"][i]
+                wait += metrics["station_metrics"]["avg_wait_times"][i]
+                downtime += metrics["station_metrics"]["avg_downtimes"][i]
                 writer.writerow([f"Station {i+1} Occupancy Rate", metrics["station_metrics"]["avg_occupancy_rates"][i]])
                 writer.writerow([f"Station {i+1} Average Wait Time", metrics["station_metrics"]["avg_wait_times"][i]])
                 writer.writerow([f"Station {i+1} Downtime", metrics["station_metrics"]["avg_downtimes"][i]])
 
             # Save time metrics
+            writer.writerow(["Average Occupancy Rate", occupancy])
+            writer.writerow(["Averafe Wait Time", wait])
+            writer.writerow(["Average Downtime", downtime])
             writer.writerow(["Average Production Time", metrics["time_metrics"]["avg_production_time"]])
             writer.writerow(["Average Fixing Time", metrics["time_metrics"]["avg_fixing_time"]])
             writer.writerow(["Average Supplier Occupancy", metrics["time_metrics"]["avg_supplier_occupancy"]])
@@ -121,12 +128,19 @@ def save_single_run_metrics_to_csv(metrics, filename="single_run_results.csv"):
             writer.writerow(["Faulty Rate", metrics["production"]["faulty_rate"]])
 
             # Save station metrics
+            occupancy, wait, downtime = 0, 0, 0
             for i in range(6):
+                occupancy += metrics["station_metrics"]["occupancy_rates"][i]
+                wait += metrics["station_metrics"]["wait_times"][i]
+                downtime += metrics["station_metrics"]["downtimes"][i]
                 writer.writerow([f"Station {i+1} Occupancy Rate", metrics["station_metrics"]["occupancy_rates"][i]])
                 writer.writerow([f"Station {i+1} Wait Time", metrics["station_metrics"]["wait_times"][i]])
                 writer.writerow([f"Station {i+1} Downtime", metrics["station_metrics"]["downtimes"][i]])
 
             # Save time metrics
+            writer.writerow(["Occupancy Rate", occupancy])
+            writer.writerow(["Wait Time", wait])
+            writer.writerow(["Downtime", downtime])
             writer.writerow(["Production Time", metrics["time_metrics"]["avg_production_time"]])
             writer.writerow(["Fixing Time", metrics["time_metrics"]["avg_fixing_time"]])
             writer.writerow(["Supplier Occupancy", metrics["time_metrics"]["supplier_occupancy"]])

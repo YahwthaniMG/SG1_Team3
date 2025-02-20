@@ -5,6 +5,7 @@ from typing import Dict, List
 
 import numpy as np
 import simpy
+
 from metrics import MetricsCollector
 from saveSimulation import *
 from simulation import LaptopFactory
@@ -90,7 +91,7 @@ def analyze_results(metrics_list: List[Dict]) -> Dict:
             "avg_supplier_occupancy": np.mean(aggregated["time_metrics"]["supplier_occupancy"]),
         },
     }
-    save_simulation_results_to_csv(results)
+    save_simulation_results_to_graph(results)
     return results
 
 
